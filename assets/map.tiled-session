@@ -1,0 +1,45 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "map.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "": {
+            "scaleInEditor": 1
+        },
+        "map.tmx": {
+            "scale": 1,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 545.5,
+                "y": 420.5
+            }
+        },
+        "map.tmx#grass": {
+            "scaleInDock": 1
+        },
+        "map.tmx#object": {
+            "scaleInDock": 1
+        },
+        "map.tmx#plant": {
+            "scaleInDock": 1
+        }
+    },
+    "last.exportedFilePath": "C:/Users/Inteli/Documents/Prototipos/prototipo_2/assets",
+    "last.imagePath": "C:/Users/Inteli/Documents/Prototipos/prototipo_2/assets",
+    "map.lastUsedExportFilter": "Ficheiros de mapa JSON (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "openFiles": [
+        "map.tmx"
+    ],
+    "project": "map.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "map.tmx"
+    ],
+    "tileset.embedInMap": true
+}
