@@ -1,13 +1,37 @@
+<!-- Seu arquivo HTML -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
-    <script src="game.js"></script>
-    <title>Prototipo2</title>
-</head>
-<body>
     
+    <title>Protótipo 2</title>
+</head>
+
+<body>
+    <script type="module">
+        import MainScene from './mainScene.js';
+        import Scene2 from './secondScene.js';
+
+        const config = {
+            pixelArt: true,
+            type: Phaser.AUTO,
+            width: 960,
+            height: 320,
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { y: 0 },
+                    debug: true
+                }
+            },
+            scene: [MainScene, Scene2]
+        }
+
+        const game = new Phaser.Game(config);
+    </script>
 </body>
+
 </html>
