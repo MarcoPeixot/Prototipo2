@@ -3,43 +3,44 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "map.tmx",
+    "activeFile": "new_map.tmx",
     "expandedProjectPaths": [
-        "."
     ],
     "fileStates": {
         "": {
             "scaleInEditor": 1
         },
-        "map.tmx": {
-            "scale": 1,
+        "new_map.tmx": {
+            "scale": 0.5,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 545.5,
-                "y": 420.5
+                "x": 639,
+                "y": 483
             }
         },
-        "map.tmx#grass": {
+        "new_map.tmx#grass": {
             "scaleInDock": 1
         },
-        "map.tmx#object": {
+        "new_map.tmx#objetos": {
             "scaleInDock": 1
         },
-        "map.tmx#plant": {
+        "new_map.tmx#water": {
             "scaleInDock": 1
         }
     },
-    "last.exportedFilePath": "C:/Users/Inteli/Documents/Prototipos/prototipo_2/assets",
-    "last.imagePath": "C:/Users/Inteli/Documents/Prototipos/prototipo_2/assets",
+    "last.exportedFilePath": "C:/Users/Inteli/Documents/novo_mapa",
+    "last.imagePath": "C:/Users/Inteli/Documents/novo_mapa",
+    "map.height": 25,
     "map.lastUsedExportFilter": "Ficheiros de mapa JSON (*.tmj *.json)",
     "map.lastUsedFormat": "tmx",
+    "map.width": 32,
     "openFiles": [
-        "map.tmx"
+        "new_map.tmx"
     ],
-    "project": "map.tiled-project",
+    "project": "new_map.tiled-project",
     "property.type": "bool",
     "recentFiles": [
-        "map.tmx"
+        "new_map.tmx"
     ],
     "tileset.embedInMap": true
 }
