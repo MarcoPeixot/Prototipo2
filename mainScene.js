@@ -19,8 +19,8 @@ export default class MainScene extends Phaser.Scene {
         this.load.image("tile_water", "./assets/novo_mapa/water.png");
         this.load.image("tile_objetos", "./assets/novo_mapa/objetos.png");
         this.load.tilemapTiledJSON("map_florest", "./assets/novo_mapa/new_map.json");
-        this.load.spritesheet("tyler", "./assets/novo_persona.png", { frameWidth: 32, frameHeight: 32 });
-        this.load.spritesheet("old_tyler", "./assets/Persona-principal.png", { frameWidth: 32, frameHeight: 32 });
+        this.load.spritesheet("tyler", "./assets/assets_tyler/tyler_armor.png", { frameWidth: 32, frameHeight: 32 });
+        this.load.spritesheet("vanessa", "./assets/assets_vanessa/vanessa_lado.png", { frameWidth: 32, frameHeight: 32 });
     }
 
     create() {
@@ -46,11 +46,11 @@ export default class MainScene extends Phaser.Scene {
         );
 
         // Cria o NPC
-        this.npc = this.physics.add.sprite(spawnPointNpc.x, spawnPointNpc.y, "old_tyler").setScale(2).setFlip(true, false);
+        this.npc = this.physics.add.sprite(spawnPointNpc.x, spawnPointNpc.y, "vanessa").setScale(1.2);
 
         // Verifica o valor de mudarCena e configura a posição inicial do jogador e os controles
         if (mudarCena === 0) {
-            this.tyler = new Player(this, 100, 400, 'tyler');
+            this.tyler = new Player(this, 100, 400, 'vanessa');
             this.controls = new Controls(this, this.tyler);
         }
         if (mudarCena === 1) {

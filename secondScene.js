@@ -16,7 +16,7 @@ export default class Scene2 extends Phaser.Scene {
     preload() {
         this.load.image("tiles", "./assets/mapa2/samplemap.png");
         this.load.tilemapTiledJSON("map_praca", "./assets/mapa2/map2.json");
-        this.load.spritesheet("tyler", "./assets/novo_persona.png", { frameWidth: 32, frameHeight: 32 });
+
     }
 
     // Cria os elementos do jogo
@@ -39,7 +39,7 @@ export default class Scene2 extends Phaser.Scene {
         );
 
         // Cria o jogador, câmera e controles
-        this.tyler = new Player(this, spawnPoint.x, spawnPoint.y, 'tyler');
+        this.tyler = new Player(this, spawnPoint.x, spawnPoint.y);
         this.camera = new Camera(this, this.tyler, this.map);
         this.control = new Controls(this, this.tyler);
 
