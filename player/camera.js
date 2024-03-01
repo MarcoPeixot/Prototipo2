@@ -23,7 +23,7 @@ export default class Camera {
         this.camera.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
 
         // Define o zoom da câmera principal
-        this.camera.setZoom(2, 2);
+        this.camera.setZoom(1.8, 1.8);
 
         // Cria uma câmera de minimapa
         this.minimap = this.scene.cameras.add(window.innerWidth - 460, window.innerHeight - 285, 500, 300).setZoom(0.2).setName('mini');

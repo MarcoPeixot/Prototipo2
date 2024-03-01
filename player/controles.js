@@ -19,13 +19,14 @@ export default class Controls {
     // Create Method in Controls class
     create() {
         this.joyStick = this.scene.plugins.get('rexvirtualjoystickplugin').add(this, {
-            x: this.scene.cameras.main.width / 3,
-            y: (this.scene.cameras.main.height / 3) * 2,
+            x: this.scene.cameras.main.width / 3 - 50,
+            y: (this.scene.cameras.main.height / 3) * 2 - 50,
             radius: 50,
-            base: this.scene.add.circle(0, 0, 30, 0x5a4efc).setDepth(10),
-            thumb: this.scene.add.circle(0, 0, 20, 0x2919ff).setDepth(10),
+            base: this.scene.add.circle(0, 0, 30, 0x00ff00).setDepth(10), // Cor verde para a base
+            thumb: this.scene.add.circle(0, 0, 20, 0x00aa00).setDepth(10), // Cor verde mais escura para o polegar
         });
     }
+    
 
     // Método de atualização dos controles
     update() {

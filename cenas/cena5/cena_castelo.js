@@ -16,11 +16,16 @@ export default class Scene3 extends Phaser.Scene{
         this.load.image('assets', './assets/mapas/castelo/objetos.png');
         this.load.spritesheet("tyler", "./assets/sprites_personagens/assets_tyler/tyler_armor.png", { frameWidth: 32, frameHeight: 32 });
         this.load.image("tecla_E", "./assets/tecla.png");
+        this.load.plugin('rexvirtualjoystickplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexvirtualjoystickplugin.min.js', true);
+
     }
 
     create(){
+        // Trasição de fade in para quando a cena iniciar
+        this.cameras.main.fadeIn(1000, 0, 0, 0);
         this.criarMapa();
         this.criarPersonagem();
+        this.control.create();
         this.voltar = 20;
     }
 

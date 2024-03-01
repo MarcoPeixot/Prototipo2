@@ -27,6 +27,8 @@ export default class Scene1 extends Phaser.Scene {
     }
 
     create() {
+        // Trasição de fade in para quando a cena iniciar
+        this.cameras.main.fadeIn(1000, 0, 0, 0);
         this.criarMapa();
         this.criarPersonagem();
         
@@ -106,7 +108,7 @@ export default class Scene1 extends Phaser.Scene {
         
         this.control.update();
         console.log(this.tyler.x, this.tyler.y);
-        if (this.tyler.x >= 850 && this.tyler.y >= 450) {
+        if (this.tyler.x >= 800 && this.tyler.y <= 450) {
             this.transitionToScene2('mainScene');
         }
     }

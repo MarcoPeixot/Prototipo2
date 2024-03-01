@@ -16,7 +16,6 @@ export default class MainScene extends Phaser.Scene {
 
     preload() {
         // Carrega os assets necessários para a cena
-        this.load.audio("vasco", './assets/musicas/gama.mp3');
         this.load.image("tile_grass", "./assets/mapas/novo_mapa/grass.png");
         this.load.image("tile_water", "./assets/mapas/novo_mapa/water.png");
         this.load.image("tile_objetos", "./assets/mapas/novo_mapa/objetos.png");
@@ -28,15 +27,13 @@ export default class MainScene extends Phaser.Scene {
     }
 
     create() {
+        // Trasição de fade in para quando a cena iniciar
+        this.cameras.main.fadeIn(1000, 0, 0, 0);
         // Inicializa a cena
         this.criarMapa();       // Configuração e criação do mapa
         this.criarPersonagem();  // Criação do jogador e controles
         this.criarNpc();         // Configuração e criação do NPC
         this.controls.create();
-
-        // Configuração do áudio
-        this.audio = this.sound.add("vasco", { loop: true });
-        this.audio.play();
 
         // Configurações adicionais da cena
         this.transicaoPonte = 1000;
@@ -57,7 +54,6 @@ export default class MainScene extends Phaser.Scene {
         this.water = this.map.createLayer("water", this.tilesetWater, 0, 0);
         this.ponte = this.map.createLayer("ponte", this.tilesetObject, 0, 0);
         this.object = this.map.createLayer("object", this.tilesetObject, 0, 0);
-        this.porta = this.map.createLayer("porta", this.tilesetObject, 0, 0);
 
         // Configuração de colisões
         this.water.setCollisionByProperty({ collider: true });
@@ -95,7 +91,7 @@ export default class MainScene extends Phaser.Scene {
         );
 
         // Criação do NPC Vanessa
-        this.vanessa = this.physics.add.sprite(spawnPointNpc.x, spawnPointNpc.y, "vanessa").setScale(1.5).setImmovable();
+        this.vanessa = this.physics.add.sprite(spawnPointNpc.x, spawnPointNpc.y, "vanessa").setScale(1.2).setImmovable();
 
         // Configuração do texto associado ao NPC Vanessa
         this.textoVanessa = this.add.text(this.vanessa.x, this.vanessa.y - 40, '', { fontFamily: 'Arial', fontSize: 16, color: '#ffffff' }).setOrigin(0.5);
@@ -104,14 +100,14 @@ export default class MainScene extends Phaser.Scene {
     colisaoComNpc() {
         // Tratamento de colisão com o NPC
         this.textoVanessa.text = '';
-        Texto.showTextLetterByLetter(this, "Olá, seja bem-vindo", this.textoVanessa);
+        Texto.showTextLetterByLetter(this, "Olá, seja bem-vindo Tyler", this.textoVanessa);
 
         this.textoJaExibido = true;
 
         // Adiciona um atraso antes de exibir a segunda mensagem
         setTimeout(() => {
             this.textoVanessa.text = '';
-            Texto.showTextLetterByLetter(this, "quer ajuda?", this.textoVanessa);
+            Texto.showTextLetterByLetter(this, "Siga em frente!", this.textoVanessa);
 
             // Adiciona um atraso antes de limpar o texto após a segunda mensagem
             setTimeout(() => {
@@ -129,7 +125,6 @@ export default class MainScene extends Phaser.Scene {
         if (this.tyler.x >= this.transicaoPonte) {
             this.transicaoCena2('scene2');  // Inicia a transição para a próxima cena
             mudarCena = 1;  // Atualiza a variável global para indicar a mudança de cena
-            this.audio.stop();  // Para a reprodução do áudio
         }
 
         // Verifica se há overlap entre o jogador e o NPC Vanessa

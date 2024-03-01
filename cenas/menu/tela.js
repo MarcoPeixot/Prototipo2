@@ -12,12 +12,13 @@ export default class Tela extends Phaser.Scene {
         this.load.image('brasil', 'assets/brasil.jpg');
         this.load.image('credits', 'assets/Credits.png');
         this.load.image('EUA', 'assets/EUA.png')
+        this.load.audio("audio", './assets/AudioFundo.mp3');
     }
 
     create() {
         // Cria o mapa e as camadas
         const background = this.add.image(window.innerWidth / 2, window.innerHeight / 2, 'tela').setScale(12);
-
+  
         // Adiciona os botões verticalmente
         const buttonSpacing = 20; // Espaçamento entre os botões
         const buttonScale = 0.7; // Escala dos botões
@@ -25,7 +26,7 @@ export default class Tela extends Phaser.Scene {
         const play = this.add.image(window.innerWidth / 2, window.innerHeight / 2, 'play').setOrigin(0.5).setScale(buttonScale*2);
         const brasil = this.add.image(window.innerWidth / 1.63, play.y + play.height * play.scaleY + buttonSpacing*4, 'brasil').setOrigin(0.5).setScale(buttonScale/4);
         const credits = this.add.image(window.innerWidth/2.85, play.y + play.height * play.scaleY + buttonSpacing*4, 'credits').setOrigin(0.5).setScale(buttonScale);
-        const EUA = this.add.image(window.innerWidth/1.48, play.y + play.height * play.scaleY + buttonSpacing*4, 'EUA').setOrigin(0.5).setScale(buttonScale/6);
+        const EUA = this.add.image(window.innerWidth/1.4, play.y + play.height * play.scaleY + buttonSpacing*4, 'EUA').setOrigin(0.5).setScale(buttonScale/6);
 
         window.addEventListener('resize', () => {
             this.handleResize();
@@ -73,6 +74,11 @@ export default class Tela extends Phaser.Scene {
         EUA.on('pointerout', () => {
             EUA.setScale(buttonScale/6);
         });
+
+          // Configuração do áudio
+          this.audio = this.sound.add("audio", { loop: true });
+          this.audio.play();
+          this.audio.setVolume(0.3)
     }
 
     handleResize() {
